@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 
-public class GetAllUsersTests extends TestBase {
+public class GetAllDoctorsTests extends TestBase {
 
     //POSITIVE
     @Test
-    public void getAllUsersSuccessTest() {
+    public void getAllDoctorsSuccessTest() {
         given()
                 .header(AUTH, "Bearer " + accessToken)
                 .when()
@@ -21,7 +21,7 @@ public class GetAllUsersTests extends TestBase {
 
     //NEGATIVE WITH WRONG ENDPOINT
     @Test
-    public void getAllUsersNegativeTest() {
+    public void getAllDoctorsNegativeTest() {
         given()
                 .header(AUTH, "Bearer" + accessToken)
                 .when()

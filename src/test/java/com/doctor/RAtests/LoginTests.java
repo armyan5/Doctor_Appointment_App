@@ -1,5 +1,6 @@
 package com.doctor.RAtests;
 
+import com.doctor.dto.ErrorDto;
 import com.doctor.dto.LoginRequestDto;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
@@ -47,7 +48,6 @@ public class LoginTests extends TestBase {
     //NEGATIVE
     //NOT VALID EMAIL
     LoginRequestDto negativeLogin = LoginRequestDto.builder()
-            //   .username("Tati@gm.com")
             .username("iv_ivanov@gm.")
             .password("123S!fghjk")
             .build();
@@ -62,6 +62,7 @@ public class LoginTests extends TestBase {
                 .post("auth/login")
                 .then()
                 .assertThat().statusCode(403);
+
     }
 
 
